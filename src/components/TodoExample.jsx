@@ -22,11 +22,17 @@ export default function TodoExample() {
   const [todos, setTodos] = useState(todoItems);
 
   const handleCheckboxChange = (todoId) => {
-    console.log("todo.id", todoId);
-
-    // const newTodos = todos.map((todo) => {
-    //   console.log(todo);
-    // });
+    //find the todo items with the matching id
+    const newTodos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        //edit the todo item and return id
+        return { ...todo, completed: !todo.completed };
+      }
+      //return the todo item edit
+      return todo;
+    });
+    //update the todo state
+    setTodos(newTodos);
   };
 
   return (
