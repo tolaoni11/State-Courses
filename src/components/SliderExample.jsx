@@ -4,6 +4,7 @@ export default function SliderExample() {
   const [age, setAge] = useState(0);
 
   const handleChange = (e) => {
+    console.log("clicked!!!");
     setAge(e.target.value);
   };
 

@@ -2,6 +2,11 @@ import React, { useState } from "react";
 
 export default function ColorChanger() {
   const [color, setColor] = useState("lightgreen");
+
+  const handleClick = () => {
+    setColor(color === "lightgreen" ? "lightblue" : "lightgreen");
+  };
+
   return (
     <div>
       <h2>Color Changer</h2>
@@ -14,9 +19,8 @@ export default function ColorChanger() {
           justifyContent: "center",
           alignItems: "center",
         }}
-      >
-        Click Me!
-      </div>
+      ></div>
+      <button onClick={() => handleClick()}>Click Me</button>
     </div>
   );
 }
