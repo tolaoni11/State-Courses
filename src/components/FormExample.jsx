@@ -9,6 +9,7 @@ export default function FormExample() {
     e.preventDefault(); //prevent page from reloading
     console.log(firstname, lastname, email);
 
+    //clear form
     setFirstname("");
     setLastname("");
     setEmail("");

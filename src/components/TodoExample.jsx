@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 export default function TodoExample() {
-  const [todos, setTodos] = useState([
+  const todoItems = [
     {
       id: 1,
       title: "learn react",
       completed: true,
     },
     {
-      id: 3,
+      id: 2,
       title: "learn redux",
       completed: false,
     },
@@ -17,7 +17,17 @@ export default function TodoExample() {
       title: "learn react-redux",
       completed: false,
     },
-  ]);
+  ];
+
+  const [todos, setTodos] = useState(todoItems);
+
+  const handleCheckboxChange = (todoId) => {
+    console.log("todo.id", todoId);
+
+    // const newTodos = todos.map((todo) => {
+    //   console.log(todo);
+    // });
+  };
 
   return (
     <div>
@@ -25,7 +35,11 @@ export default function TodoExample() {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            <input type="checkbox" checked={todo.completed} />
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => handleCheckboxChange(todo.id)}
+            />
             {todo.title}
           </li>
         ))}
