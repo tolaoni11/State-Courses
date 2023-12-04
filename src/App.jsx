@@ -8,7 +8,7 @@ import TodoExample from "./components/TodoExample";
 function App() {
   return (
     <>
-      <FormExample />
+      <SliderExample />
     </>
   );
 }
